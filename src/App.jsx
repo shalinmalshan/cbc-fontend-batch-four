@@ -1,13 +1,22 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/header'
 import ProductCard from './components/product-card'
+import AdminPage from './pages/adminPage'
+import LoginPage from './pages/loginPage'
 
 function App() {
 
   return (
-    <>
-     <Header/>
-     <ProductCard name="iphone 16" description="iphone 16 description" price="1000" /> 
-      </>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/login' element={<LoginPage/>}/>
+      <Route path='/admin/*' element={<AdminPage/>}/>
+      <Route path='/' element={<h1>ff</h1>}/>
+      <Route path='/*' element={<h1>ERROR 404 NOT FOUNDED </h1>}/>
+    </Routes>
+
+    </BrowserRouter>
+     
   )
 }
 
