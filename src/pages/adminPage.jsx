@@ -20,7 +20,7 @@ export default function AdminPage() {
                 <Route path='/orders' element={<h1>Orders</h1>}/>
                 <Route path='/users' element={<h1>Users</h1>}/>
                 <Route path='/settings' element={<h1>Settings</h1>}/>
-                <Route path='*' element={<h1>ERROR 404 NOT FOUNDED </h1>}/>
+                <Route path='/*' element={<h1>ERROR 404 NOT FOUNDED </h1>}/>
 
 
             </Routes>
