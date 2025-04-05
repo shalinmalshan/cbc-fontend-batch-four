@@ -3,6 +3,8 @@ import { FaUsers } from "react-icons/fa6";
 import { FaWarehouse } from "react-icons/fa6"
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
+import AdminPoductPage from "./product";
+import AddProductForm from "./addProductForm";
 
 export default function AdminPage() {
     return(
@@ -16,11 +18,12 @@ export default function AdminPage() {
                 </div>
             <div className="h-full w-[calc(100vw-300px)] bg-white rounded-lg">
             <Routes path="/*">
-                <Route path='/products' element={<h1>Products</h1>}/>
+                <Route path='/products' element={<AdminPoductPage/>}/>
                 <Route path='/orders' element={<h1>Orders</h1>}/>
                 <Route path='/users' element={<h1>Users</h1>}/>
                 <Route path='/settings' element={<h1>Settings</h1>}/>
-                <Route path='/*' element={<h1>ERROR 404 NOT FOUNDED </h1>}/>
+                <Route path='/addProduct' element={<AddProductForm/>}/>
+                
 
 
             </Routes>
