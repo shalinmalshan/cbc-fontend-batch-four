@@ -1,30 +1,36 @@
 import { useState } from "react"
+import toast from "react-hot-toast"
+import MeadiaUpload from "../../utils/mediaUpload"
 
-export default function Testing(){
-    const [number,setNumber]=useState(0)
 
+export default function Testing() {
+    const [file, setFile] = useState(null)
 
-    function increment(){
-        let newNumber=number+1
-        setNumber(newNumber)
+    function handleUpload() {
+        MeadiaUpload(file).then(
+            (url)=>{
+                console.log(url)
+                toast.success("file uploaded successfully")
+            }
+        ).catch(
+            (err)=>{
+                console.log(err)
+                toast.error("file not uploaded")
+            }
+        )
     }
+    return (
+        <div className="w-full h-screen flex flex-col justify-center items-center">
+            <input type="file" onChange={
 
-    function decrement(){
-        let newNumber=number-1
-        setNumber(newNumber)
-    }
+                (e) => {
+                    setFile(e.target.files[0])
+                }
 
-
-    return(
-       <div className="w-full h-screen bg-amber-600 flex flex-col justify-center items-center">
-        <span className="text-3xl font-bold">{number}</span>
-        <div className="w-full flex justify-center items-center">
-            <button onClick={increment} className="bg-blue-600 text-white p-2 rounded-2xl">+</button>
-            <button onClick={decrement} className="bg-blue-600 text-white p-2 rounded-2xl">-</button>
+            } />
+            <button className="bg-green-500 w-[200px] h-[50px] rounded-xl text-white cursor-pointer" onClick={handleUpload}>Upload</button>
         </div>
 
-       </div>
-       
 
     )
 }
