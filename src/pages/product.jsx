@@ -90,7 +90,7 @@ export default function AdminPoductPage() {
                                         <td className="p-2">{product.productId}</td>
                                         <td className="p-2">{product.name}</td>
                                         <td className="p-2">{product.price}</td>
-                                        <td className="p-2">{product.labelPrice}</td>
+                                        <td className="p-2">{product.labeledPrice}</td>
                                         <td className="p-2">{product.stock}</td>
                                         <td className="p-2">
                                             <div className="w-full h-full flex justify-center">
